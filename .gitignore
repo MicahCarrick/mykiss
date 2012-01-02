@@ -1,0 +1,11 @@
+*.pyc
+*.tar.gz
+
+autom4te.cache
+Makefile
+Makefile.in
+configure.log
+
+data/pledit.desktop
+src/pledit
+
