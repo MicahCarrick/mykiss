@@ -2,3 +2,4 @@
 module=minimal
 name=Minimal Plugin
 version=0.1
+stock_id=gtk-about

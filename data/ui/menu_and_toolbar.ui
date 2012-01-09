@@ -17,8 +17,8 @@
       <menuitem action="Paste"/>
       <separator/>
     </menu>
-    <menu action="Tools">
-      <menuitem action="Plugins"/>
+    <menu action="Help">
+      <menuitem action="About"/>
     </menu>
   </menubar>
   <toolbar name="MainToolbar">
