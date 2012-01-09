@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Exec=@PACKAGE@
+Name=@PACKAGE_NAME@
+GenericName=Text Editor
+Comment=Edit source code text files
+Categories=Development;GTK;
+Icon=@PACKAGE@
+StartupNotify=true
+MimeType=text/plain;
+Terminal=false
+

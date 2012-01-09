@@ -1,0 +1,33 @@
+<ui>
+  <menubar name="MainMenu">
+    <menu action="File">
+      <menuitem action="New"/>
+      <menuitem action="Open"/>
+      <separator/>
+      <menuitem action="Save"/>
+      <menuitem action="SaveAs"/>
+      <separator/>
+      <menuitem action="Close"/>
+      <separator/>
+      <menuitem action="Quit"/>
+    </menu>
+    <menu action="Edit">
+      <menuitem action="Cut"/>
+      <menuitem action="Copy"/>
+      <menuitem action="Paste"/>
+      <separator/>
+    </menu>
+    <menu action="Tools">
+      <menuitem action="Plugins"/>
+    </menu>
+  </menubar>
+  <toolbar name="MainToolbar">
+    <toolitem action="New"/>
+    <toolitem action="Open"/>
+    <toolitem action="Save"/>
+    <separator/>
+    <toolitem action="Cut"/>
+    <toolitem action="Copy"/>
+    <toolitem action="Paste"/>
+  </toolbar>
+</ui>

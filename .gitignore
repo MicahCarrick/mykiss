@@ -4,8 +4,10 @@
 autom4te.cache
 Makefile
 Makefile.in
-configure.log
+config.log
+config.status
 
-data/pledit.desktop
-src/pledit
+data/sunny.desktop
+*.gschema.valid
+src/sunny
 

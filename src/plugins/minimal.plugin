@@ -1,0 +1,4 @@
+[Plugin]
+module=minimal
+name=Minimal Plugin
+version=0.1

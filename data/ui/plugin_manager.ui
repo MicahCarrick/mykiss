@@ -1,0 +1,6 @@
+<ui>
+  <toolbar name="PluginManagerToolbar">
+    <toolitem action="About"/>
+    <toolitem action="Preferences"/>
+  </toolbar>
+</ui>
