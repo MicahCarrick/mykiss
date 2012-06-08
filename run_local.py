@@ -35,7 +35,7 @@ if __name__ == "__main__":
     try:
         app = Application(package="mykiss", 
                           package_name="Mykiss",
-                          version="0.1-dev",
+                          version="0.0",
                           data_dir=data_dir,
                           plugin_dir=plugin_dir)
     except Exception, e:

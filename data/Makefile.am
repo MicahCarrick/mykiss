@@ -4,12 +4,9 @@ desktopdir = $(datadir)/applications
 desktop_DATA = mykiss.desktop
 UPDATE_DESKTOP = update-desktop-database $(datadir)/applications || :
 
-gsettings_SCHEMAS = apps.mykiss.gschema.xml
-@GSETTINGS_RULES@
 
 EXTRA_DIST = \
-	$(desktop_in_files) \
-	apps.mykiss.gschema.xml
+	$(desktop_in_files) 
 
 CLEANFILES = \
 	$(desktop_DATA)	
