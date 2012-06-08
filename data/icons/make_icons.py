@@ -12,6 +12,7 @@ icon_count = 0
 for sub_folder in os.listdir(svg_path):
     source_path = os.path.join(svg_path, sub_folder)
     if not os.path.isdir(source_path):
+        print "%s is not a dir" % source_path
         continue # skip files   
     print "Scanning '%s' folder..." % sub_folder
     
