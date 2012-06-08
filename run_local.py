@@ -3,7 +3,7 @@
 import sys
 import os
 import logging
-import argparse
+#import argparse
 from gi.repository import Gtk
 
 # local data paths
@@ -22,6 +22,7 @@ from mykiss.application import Application
 if __name__ == "__main__":
     # parse command line options
     # TODO: let Gtk.Application handle command line arguments
+    """
     parser = argparse.ArgumentParser(description="A programmer's text editor.")
     parser.add_argument('-l', '--loglevel', default='WARNING',
                         help='Set the logging level: CRITICAL, ERROR, WARNING, INFO, DEBUG')
@@ -30,6 +31,7 @@ if __name__ == "__main__":
     # setup logging
     loglevel = getattr(logging,args.loglevel)
     #logging.basicConfig(level=loglevel)
+    """
     logging.basicConfig(level=logging.DEBUG) # for run_local.py only!
     
     try:
