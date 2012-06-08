@@ -34,7 +34,8 @@ class FileBrowserPlugin(MykissPlugin):
         super(FileBrowserPlugin, self).deactivate()
     
     def on_window_added(self, application, window, data=None):
-        self.add_dock_item_to_window(window)
+        #self.add_dock_item_to_window(window)
+        pass
 
 
 

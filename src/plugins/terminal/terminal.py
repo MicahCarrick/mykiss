@@ -9,6 +9,7 @@ from mykiss import icons
 
 class TerminalPlugin(MykissPlugin):
     icon_name = "mykiss-terminal"
+    widget_name = "mykiss-terminal"
     
     def __init__(self):
         super(TerminalPlugin, self).__init__()
@@ -21,13 +22,15 @@ class TerminalPlugin(MykissPlugin):
 
         # add terminal to existing windows
         for window in self.application.get_windows():
-            window.add_widget("Terminal", self._create_widget(), self.icon_name, 
+            window.add_widget(self.widget_name, "Terminal", 
+                              self._create_widget(), self.icon_name, 
                               Gtk.Orientation.HORIZONTAL)
         
         # add terminal to any windows that get added
         self.connect(self.application, "window-added", self.on_window_added)
     
     def _create_widget(self):
+        """ Return a new instance of the Terminal widget packed in a box. """
         vte = Terminal()
         scrollbar = Gtk.Scrollbar.new(Gtk.Orientation.VERTICAL, 
             vte.get_vadjustment())
@@ -43,10 +46,11 @@ class TerminalPlugin(MykissPlugin):
         
         # remove terminal from existing windows
         for window in self.application.get_windows():
-            window.remove_widget("Terminal")
+            window.remove_widget(self.widget_name)
     
     def on_window_added(self, application, window, data=None):
-        window.add_widget("Terminal", self._create_widget(), self.icon_name, 
+        window.add_widget(self.widget_name, "Terminal", 
+                           self._create_widget(), self.icon_name, 
                            Gtk.Orientation.HORIZONTAL)
 
 class Terminal(Vte.Terminal):
