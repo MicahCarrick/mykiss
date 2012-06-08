@@ -1,5 +1,0 @@
-[Plugin]
-module=pluginmanager.pluginmanager
-name=Plugin Manager
-description=A dockable plugin manager.
-version=0.1

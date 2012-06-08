@@ -1,6 +1,0 @@
-[Plugin]
-module=terminal.terminal
-name=Terminal
-description=A dockable terminal.
-version=0.1
-

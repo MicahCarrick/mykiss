@@ -1,0 +1,10 @@
+[Core]
+Name = Terminal
+Module = terminal
+
+[Documentation]
+Author = Micah Carrick
+Version = 0.1
+Website = http://mykiss-editor.org/plugins/
+Description = A dockable terminal widget based on VTE.
+
