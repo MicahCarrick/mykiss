@@ -17,6 +17,10 @@
       <menuitem action="Paste"/>
       <separator/>
     </menu>
+    <menu action="View">
+      <menu action="Dock">
+      </menu>
+    </menu>
     <menu action="Help">
       <menuitem action="About"/>
     </menu>
