@@ -20,7 +20,6 @@
     <menu action="View">
       <separator/>
       <menuitem action="LockDockLayout"/>
-      <separator/>
     </menu>
     <menu action="Help">
       <menuitem action="About"/>
