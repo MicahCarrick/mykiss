@@ -18,8 +18,13 @@
       <separator/>
     </menu>
     <menu action="View">
-      <separator/>
       <menuitem action="LockDockLayout"/>
+      <separator/>
+      <menu action="Split">
+        <menuitem action="SplitEditorHorizontal"/>
+        <menuitem action="SplitEditorVertical"/>
+        <separator/>
+      </menu>
     </menu>
     <menu action="Help">
       <menuitem action="About"/>
