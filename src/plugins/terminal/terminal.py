@@ -9,7 +9,7 @@ from mykiss import icons
 
 class TerminalPlugin(MykissPlugin):
     icon_name = "mykiss-terminal"
-    widget_name = "mykiss-terminal"
+    widget_name = "mykiss.plugins.terminal"
     
     def __init__(self):
         super(TerminalPlugin, self).__init__()
