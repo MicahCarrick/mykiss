@@ -24,6 +24,8 @@
         <menuitem action="SplitEditorHorizontal"/>
         <menuitem action="SplitEditorVertical"/>
         <separator/>
+        <menuitem action="SplitViewHorizontal"/>
+        <menuitem action="SplitViewVertical"/>
       </menu>
     </menu>
     <menu action="Help">
