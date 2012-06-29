@@ -9,7 +9,6 @@ class DocumentListPlugin(MykissPlugin):
         super(DocumentListPlugin, self).activate()
 
         # add widget to existing windows
-        print self.application
         for window in self.application.get_windows():
             self._on_window_added(self.application, window)
         
@@ -18,13 +17,19 @@ class DocumentListPlugin(MykissPlugin):
     
     def _create_widget(self, window):
         """ Return a new instance of the dock widget. """
-        self._list = DocumentList(window.get_documents())
+        doclist = DocumentList(window.get_documents())
         sw = Gtk.ScrolledWindow()
         sw.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         sw.set_shadow_type(Gtk.ShadowType.ETCHED_IN)
-        sw.add(self._list)
+        sw.add(doclist)
         sw.show_all()
-
+        
+        self.connect(window.get_editor(), "document-added", 
+                     lambda *w: doclist.populate(window.get_documents()))
+        self.connect(window.get_editor(), "document-removed", 
+                     lambda *w: doclist.populate(window.get_documents()))
+        #TODO: connect to tabs reordered and tabs moved from one window to another
+                  
         return sw
         
     def deactivate(self):
@@ -37,23 +42,17 @@ class DocumentListPlugin(MykissPlugin):
     
     def _on_window_added(self, application, window, data=None):
         """ A new application window has been created. """
+        #print(window.application)
         window.add_widget(self.widget_name, "Documents", 
                            self._create_widget(window), self.icon_name, 
                            Gtk.Orientation.VERTICAL)
-        self.connect(window.get_editor(), "document-added", 
-                     self._on_document_added_or_removed, window)
-        self.connect(window.get_editor(), "document-removed", 
-                     self._on_document_added_or_removed, window)
-    
-    def _on_document_added_or_removed(self, editor, document, window):
-        self._list.populate(window.get_documents())
         
 
 class DocumentList(Gtk.TreeView):
     """
-    A Gtk.TreeView displaying a list of documents.
+    A Gtk.TreeView displaying a list of documents for a window.
     """
-    def __init__(self, documents=None):
+    def __init__(self, documents):
         self._store = Gtk.ListStore(GdkPixbuf.Pixbuf,       # icon
                                     GObject.TYPE_STRING,    # name            
                                     object)                 # document
@@ -71,7 +70,7 @@ class DocumentList(Gtk.TreeView):
         self.append_column(column)
         
         if documents:
-            self.populate(documents)
+            self.populate(documents)        
     
     def populate(self, documents):
         self._store.clear()

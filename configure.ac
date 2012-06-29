@@ -1,6 +1,6 @@
 AC_INIT(
 	[Mykiss], 
-	[0.1],
+	[0.3],
 	[https://github.com/MicahCarrick/mykiss/issues/new],
 	[mykiss],
 	[https://github.com/MicahCarrick/mykiss]

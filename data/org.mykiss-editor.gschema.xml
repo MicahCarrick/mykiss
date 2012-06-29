@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema path="/org/mykiss-editor/" id="org.mykiss-editor">
+    <child schema="org.mykiss-editor.window" name="window"/>
+  </schema>
+  <schema path="/org/mykiss-editor/window/" id="org.mykiss-editor.window">
+    <key type="b" name="restore-geometry">
+      <default>true</default>
+      <summary>Restore window geometry</summary>
+      <description>
+        Restore the window geometry when launching Mykiss.
+      </description>
+    </key>
+    <key type="(ii)" name="window-size">
+      <default>(500, 500)</default>
+    </key>
+  </schema>
+</schemalist>

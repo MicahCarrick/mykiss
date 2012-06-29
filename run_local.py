@@ -1,9 +1,13 @@
 #!/usr/bin/env python
+"""
+Run Local
 
+Run Mykiss from the current folder, setting up local paths for plugins and 
+application data. This script is primarily used for development. 
+"""
 import sys
 import os
 import logging
-#import argparse
 from gi.repository import Gtk
 
 # local data paths
@@ -20,24 +24,12 @@ theme.append_search_path(os.path.join(data_dir, 'icons'))
 from mykiss.application import Application
 
 if __name__ == "__main__":
-    # parse command line options
-    # TODO: let Gtk.Application handle command line arguments
-    """
-    parser = argparse.ArgumentParser(description="A programmer's text editor.")
-    parser.add_argument('-l', '--loglevel', default='WARNING',
-                        help='Set the logging level: CRITICAL, ERROR, WARNING, INFO, DEBUG')
-    args = parser.parse_args()
-    
-    # setup logging
-    loglevel = getattr(logging,args.loglevel)
-    #logging.basicConfig(level=loglevel)
-    """
     logging.basicConfig(level=logging.DEBUG) # for run_local.py only!
     
     try:
         app = Application(package="mykiss", 
                           package_name="Mykiss",
-                          version="0.0",
+                          version="0.3",
                           data_dir=data_dir,
                           plugin_dir=plugin_dir)
     except Exception, e:
