@@ -9,11 +9,12 @@ sys.path.insert(1, '@pythondir@')
 from mykiss.application import Application
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.WARN)
     try:
         app = Application(package="@PACKAGE@", 
+                          package_name="@PACKAGE_NAME@",
                           version="@VERSION@",
-                          data_dir="@pkgdatadir@",
-                          log_level=logging.DEBUG)
+                          data_dir="@pkgdatadir@")
     except Exception, e:
         sys.exit("Could not initialize application: %s" % str(e))
     app.run(sys.argv)

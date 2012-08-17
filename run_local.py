@@ -32,6 +32,6 @@ if __name__ == "__main__":
                           version="0.3",
                           data_dir=data_dir,
                           plugin_dir=plugin_dir)
-    except Exception, e:
+    except Exception as e:
         sys.exit("Could not initialize application: %s" % str(e))
     app.run(sys.argv)

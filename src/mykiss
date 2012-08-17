@@ -9,11 +9,12 @@ sys.path.insert(1, '/usr/local/lib/python2.7/site-packages')
 from mykiss.application import Application
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.WARN)
     try:
         app = Application(package="mykiss", 
-                          version="0.1",
-                          data_dir="/usr/local/share/mykiss",
-                          log_level=logging.DEBUG)
+                          package_name="Mykiss",
+                          version="0.3",
+                          data_dir="/usr/local/share/mykiss")
     except Exception, e:
         sys.exit("Could not initialize application: %s" % str(e))
     app.run(sys.argv)

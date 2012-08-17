@@ -15,14 +15,14 @@ dnl --- Check for required Python packages -------------------------------------
 
 AM_PATH_PYTHON([2.5])
 
-AX_PYTHON_MODULE([xdg], [PyXDG])
 AX_PYTHON_MODULE([gi.repository], [PyGObject 3])
 AX_PYTHON_MODULE([gi.repository.GObject], [GLib 2])
 AX_PYTHON_MODULE([gi.repository.Pango], [Pango])
 AX_PYTHON_MODULE([gi.repository.Gtk], [GTK+ 3])
 AX_PYTHON_MODULE([gi.repository.Gdl], [GNOME Docking Library])
-AX_PYTHON_MODULE([gi.repository.Peas], [Peas Plugin Engine])
 AX_PYTHON_MODULE([gi.repository.GtkSource], [GtkSourceView 3])
+AX_PYTHON_MODULE([xdg], [PyXDG])
+AX_PYTHON_MODULE([yapsy], [Yapsy])
 
 dnl --- GSettings --------------------------------------------------------------
 
@@ -37,9 +37,8 @@ AC_CONFIG_FILES([
 	data/Makefile
 	data/mykiss.desktop
 	data/icons/Makefile
+	data/icons/scalable/Makefile
 	data/icons/hicolor/Makefile
-	data/icons/hicolor/48x48/Makefile
-	data/icons/hicolor/48x48/apps/Makefile
 	data/icons/hicolor/scalable/Makefile
 	data/icons/hicolor/scalable/apps/Makefile
 	data/ui/Makefile
@@ -47,6 +46,7 @@ AC_CONFIG_FILES([
 	src/plugins/Makefile
 	src/site-packages/Makefile
 	src/site-packages/mykiss/Makefile
+	src/site-packages/mykiss/widgets/Makefile
 ])
 
 AC_OUTPUT

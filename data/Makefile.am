@@ -4,7 +4,6 @@ desktopdir = $(datadir)/applications
 desktop_DATA = mykiss.desktop
 UPDATE_DESKTOP = update-desktop-database $(datadir)/applications || :
 
-
 EXTRA_DIST = \
 	$(desktop_in_files) 
 
