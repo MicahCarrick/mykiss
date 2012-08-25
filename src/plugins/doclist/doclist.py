@@ -28,8 +28,7 @@ class DocumentListPlugin(MykissPlugin):
                      lambda *w: doclist.populate(window.get_documents()))
         self.connect(window.get_editor(), "document-removed", 
                      lambda *w: doclist.populate(window.get_documents()))
-        #TODO: connect to tabs reordered and tabs moved from one window to another
-                  
+                          
         return sw
         
     def deactivate(self):
@@ -53,9 +52,11 @@ class DocumentList(Gtk.TreeView):
     A Gtk.TreeView displaying a list of documents for a window.
     """
     def __init__(self, documents):
+        self._pixbufs = {}
         self._store = Gtk.ListStore(GdkPixbuf.Pixbuf,       # icon
                                     GObject.TYPE_STRING,    # name            
                                     object)                 # document
+        self._store.set_sort_column_id(1, Gtk.SortType.ASCENDING)
         Gtk.TreeView.__init__(self, self._store)
 
         self.set_headers_visible(False)          
@@ -75,9 +76,12 @@ class DocumentList(Gtk.TreeView):
     def populate(self, documents):
         self._store.clear()
         for document in documents:
-            # TODO: get pixbuf from document.get_icon_pixbuf()
-            pixbuf = self.render_icon_pixbuf(Gtk.STOCK_FILE, Gtk.IconSize.MENU)
-            self._store.append((pixbuf, document.name, document))
+            icon_name = document.get_icon_name()
+            if not icon_name in self._pixbufs:
+                icon_theme = Gtk.IconTheme.get_default()
+                pixbuf = icon_theme.load_icon(icon_name, Gtk.IconSize.MENU, 0)
+                self._pixbufs[icon_name] = pixbuf
+            self._store.append((self._pixbufs[icon_name], document.name, document))
 
     
         
