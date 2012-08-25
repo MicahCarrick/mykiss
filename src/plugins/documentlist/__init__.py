@@ -1,1 +1,0 @@
-from documentlist import DocumentListPlugin
