@@ -1,11 +1,7 @@
-SUBDIRS = documentlist terminal
+SUBDIRS = doclist terminal
 
-mykiss_PYTHON = \
-	__init__.py \
-	application.py \
-	document.py \
-	icons.py \
-	logobject.py \
-	plugin.py 
+plugin_DATA = \
+	doclist.plugin \
+	terminal.plugin 
 
-mykissdir = $(pythondir)/mykiss
+plugindir = $(pkgdatadir)/plugins

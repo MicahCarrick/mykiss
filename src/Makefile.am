@@ -1,4 +1,4 @@
-SUBDIRS = site-packages
+SUBDIRS = site-packages plugins
 
 bin_SCRIPTS = mykiss
 CLEANFILES = $(bin_SCRIPTS)
