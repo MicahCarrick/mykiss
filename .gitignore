@@ -1,3 +1,7 @@
+py-compile
+missing
+install-sh
+
 __pycache__
 *.pyc
 *.tar.gz
